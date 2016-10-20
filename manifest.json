@@ -2,7 +2,7 @@
     "runtime": {
         "majorVersion": "8"
     },
-    "command": "java -jar -Dswarm.https.port=$PORT -Dswarm.context.path=/ticker-tracker ticker-tracker-swarm.jar",
+    "command": "java -jar -Dswarm.https.port=$PORT -Dswarm.context.path=ticker-tracker target/ticker-tracker-swarm.jar",
     "release": {
         "build": "24082016.2052",
         "commit": "007",
