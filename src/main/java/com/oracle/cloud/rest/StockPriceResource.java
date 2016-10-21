@@ -33,10 +33,16 @@ public class StockPriceResource {
             return String.format("Could not find price for ticker %s", ticker);
         }
         String tick = response.readEntity(String.class);
-        tick = tick.replace("// [", "");
-        tick = tick.replace("]", "");
-
-        return StockDataParser.parse(tick);
+        // I'm not sure why the response is preprended with "//"...
+        tick = tick.replace("//", "");
+        
+        //Removes JSON formatting from response...
+        //tick = tick.replace("// [", "");
+        //tick = tick.replace("]", "");
+        
+        // For a user friently response...
+        //return StockDataParser.parse(tick);
+        return tick;
     }
 
 }
