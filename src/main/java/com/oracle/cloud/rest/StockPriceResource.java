@@ -30,7 +30,7 @@ public class StockPriceResource {
 
         if (response.getStatus() != 200) {
             //throw new WebApplicationException(Response.Status.NOT_FOUND);
-            return String.format("Could not find price for ticker %s", ticker);
+            return String.format("Could not find price for ticker %s", ticker, ". Check your symbol and try again.");
         }
         String tick = response.readEntity(String.class);
         // I'm not sure why the response is preprended with "//"...
